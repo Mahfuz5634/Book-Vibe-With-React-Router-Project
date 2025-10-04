@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { Suspense } from 'react';
+import Book from './Book';
 
-const Books = () => {
+const Books = ({bookdata}) => {
     return (
-        <div>
-            <h1>Hello ami books</h1>
+        <div className='m-5 '>
+            <h1 className='text-3xl text-center font-semibold font-serif  mb-5'>Books</h1>
+            <div className='md:grid grid-cols-4 md:gap-5 container mx-auto'>
+                <Suspense fallback={<span className="loading loading-infinity loading-xl"></span>}>
+                 {
+                    bookdata.map((data,index)=><Book key={index} data={data}></Book>)
+                 }
+            </Suspense>
+            </div>
         </div>
     );
 };

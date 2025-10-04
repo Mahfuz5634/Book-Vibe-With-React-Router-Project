@@ -13,9 +13,11 @@ export const router = createBrowserRouter([
     path: "*",
     Component:Error,
   },
-  {
+  { 
+    loader:()=>fetch("/public/booksData.json"),
     index:true,
     Component:Home,
+   
   },
     ]
   },
