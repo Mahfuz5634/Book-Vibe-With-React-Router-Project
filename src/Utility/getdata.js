@@ -21,4 +21,4 @@ const addTostore = (id) => {
   }
 };
 
-export {addTostore};
+export {addTostore,getStorebook};
