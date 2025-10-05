@@ -5,6 +5,7 @@ import Error from "../Pages/Error";
 import Home from "../Pages/Home";
 import About from "../Pages/About";
 import Reaslist from "../Pages/Reaslist";
+import Toread from "../Pages/Toread";
 
 export const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
       {
         path: "*",
         Component: Error,
+      },
+       {
+        path: "/read",
+        Component: Toread,
       },
     ],
   },

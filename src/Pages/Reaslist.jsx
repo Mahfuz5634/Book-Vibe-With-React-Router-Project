@@ -34,7 +34,7 @@ const Reaslist = () => {
       </div>
     </TabPanel>
     <TabPanel>
-      <h2>Any content 2</h2>
+      <h2 className='text-center my-10 text-3xl'>Working On it</h2>
     </TabPanel>
   </Tabs>
         </div>

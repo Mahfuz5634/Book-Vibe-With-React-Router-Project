@@ -18,7 +18,7 @@ const Navbar = () => {
         </NavLink>
 
         <NavLink 
-            to='/pages' 
+            to='/read' 
             className={({ isActive }) => 
                 isActive ? 'font-semibold text-[#6ab2bd] border-b-2 border-[#6ab2bd]' 
                          : 'font-semibold'
