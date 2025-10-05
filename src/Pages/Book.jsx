@@ -1,11 +1,16 @@
+
 import React from 'react';
 import { FaRegStarHalfStroke } from "react-icons/fa6";
+import { Link, Links, useNavigate } from 'react-router';
 const Book = ({data}) => {
-     console.log(data)
      const {image}=data;
+     const navigate=useNavigate();
+     const handle=()=>{
+         navigate(`/about/${data.bookId}`)
+     }
      
     return (
-    <div className='md:w-[300px] md:h-full border-1 border-gray-100 p-5  rounded-xl'>
+    <div onClick={handle} className='md:w-[300px] md:h-full border-1 shadow border-gray-100 p-5  rounded-xl'>
         <div className='bg-gray-200  md:w-[250px] md:h-[250px] flex justify-center items-center rounded-xl'>
             <img className='md:w-[130px] md:h-[160px] w-[80px] h-[150px]' src={image} alt="" />
         </div>
