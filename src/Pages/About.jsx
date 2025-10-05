@@ -1,16 +1,22 @@
 import React from "react";
 import { useLoaderData, useParams } from "react-router";
+import { addTostore } from "../Utility/getdata";
 
 const About = () => {
   const { id } = useParams();
   const data = useLoaderData();
   const singledata = data.find((book) => book.bookId == id);
-  console.log(singledata);
+
+
+  const markread =(id)=>{
+      addTostore(id);
+  }
+
   return (
-    <div className="flex justify-center items-center container mx-auto p-5 gap-5 ">
-      <div className="h-[650px] w-[500px] bg-gray-300  p-10 flex justify-center items-center rounded-2xl">
+    <div className="md:flex justify-center items-center container mx-auto p-5 gap-5 ">
+      <div className="md:h-[650px] md:w-[500px] bg-gray-300  p-10 flex justify-center items-center rounded-2xl">
         <img
-          className="md:h-[450px] md:w-[350px]"
+          className="md:h-[450px] md:w-[350px] h-auto w-auto"
           src={singledata.image}
           alt=""
         />
@@ -46,8 +52,8 @@ const About = () => {
         </div>
         <hr />
         <div className="mt-4">
-          <button className="btn btn-soft mr-5">Read</button>
-          <button className="btn bg-[#6ab2bd]">Wishlist</button>
+          <button onClick={()=>markread(id)} className="btn btn-soft mr-5">Mark As Read</button>
+          <button className="btn bg-[#6ab2bd]"> Add To Wishlist</button>
         </div>
       </div>
     </div>
