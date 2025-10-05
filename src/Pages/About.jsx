@@ -9,7 +9,9 @@ const About = () => {
 
 
   const markread =(id)=>{
+      
       addTostore(id);
+      
   }
 
   return (

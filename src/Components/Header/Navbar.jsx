@@ -1,12 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 const Navbar = () => {
 
     const links=<>
-       <Link to='/'><li className='mr-5 font-semibold'>Home</li></Link>
-       <Link to='/readlist'> <li className='mr-5 font-semibold '>Listed Books</li></Link>
-       <li className='font-semibold'>Pages To Read</li>
+       <NavLink to='/' className={({isActive})=>
+           isActive ? 'mr-5 font-semibold text-[#6ab2bd] border-b-2 border-[#6ab2bd]' 
+                         : 'mr-5 font-semibold'
+       }>Home</NavLink>
+        <NavLink 
+            to='/readlist' 
+            className={({ isActive }) => 
+                isActive ? 'mr-5 font-semibold text-[#6ab2bd] border-b-2 border-[#6ab2bd]' 
+                         : 'mr-5 font-semibold'
+            }>
+            Listed Books
+        </NavLink>
+
+        <NavLink 
+            to='/pages' 
+            className={({ isActive }) => 
+                isActive ? 'font-semibold text-[#6ab2bd] border-b-2 border-[#6ab2bd]' 
+                         : 'font-semibold'
+            }>
+            Pages To Read
+        </NavLink>
     </>
        
     
